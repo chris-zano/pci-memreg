@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="#">
+    <form action="#" id="reg-form">
         <div class="header">
             <h2>Member Registration Form</h2>
         </div>
@@ -30,6 +30,9 @@
 
             <div class="input-group">
                 <div class="input-sub-group">
+                    <div class="header 3">
+                        <h3> Gender</h3>
+                    </div>
                     <input type="radio" name="gender" id="male">
                     <label for="male">Male</label>
                 </div>
@@ -56,21 +59,28 @@
             </div>
         </fieldset>
 
-
         <fieldset>
             <legend>Contact Information</legend>
             <div class="input-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" placeholder="123 456 7890">
+                <input type="tel" name="phone" id="phone" placeholder="123 456 7890" required>
             </div>
 
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" example@email.com>
+                <input type="email" name="email" id="email" placeholder="example@email.com">
             </div>
         </fieldset>
 
+        <div class="button">
+            <button> SEND </button>
+
+        </div>
+
     </form>
+
+    <!-- do the image form here -->
+    <script src="/scripts/dynamic/inputs"></script>
 </body>
 
 </html>

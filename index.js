@@ -35,27 +35,40 @@ const databasename = encodeURIComponent(process.env.DATABASE_NAME);
 const uri = `mongodb+srv://${username}:${password}@${clusterName}.jwscxvu.mongodb.net/${databasename}?retryWrites=true&w=majority&appName=${appName}`;
 const local_uri = `${process.env.LOCAL_DB_HOST}${databasename}`;
 
-mongoose.connect(local_uri)
-    .then(() => {
-        const PORT = process.env.PORT || 8080;
-        server.listen(PORT, () => {
-            console.log(`App is live on port ${PORT}`);
-        })
+const PORT = process.env.PORT || 8080;
+server.listen(PORT, () => {
+    console.log(`App is live on port ${PORT}`);
+})
 
-        //call and execute routeStack
-        routeStack(app);
+//call and execute routeStack
+routeStack(app);
 
-        process.on('SIGTERM', () => {
-            server.close(() => {
-                console.log('process terminated. closing database connection');
-                mongoose.connection.close(false, () => {
-                    console.log('mongoose connection closed.');
-                    process.exit(0);
-                });
-            });
-        });
-    })
-    .catch((error) => {
-        console.log('Failed to connect to database.');
-        console.error(error);
+process.on('SIGTERM', () => {
+    server.close(() => {
+        console.log('process terminated. closing database connection');
     });
+});
+// mongoose.connect(local_uri)
+//     .then(() => {
+//         const PORT = process.env.PORT || 8080;
+//         server.listen(PORT, () => {
+//             console.log(`App is live on port ${PORT}`);
+//         })
+
+//         //call and execute routeStack
+//         routeStack(app);
+
+//         process.on('SIGTERM', () => {
+//             server.close(() => {
+//                 console.log('process terminated. closing database connection');
+//                 mongoose.connection.close(false, () => {
+//                     console.log('mongoose connection closed.');
+//                     process.exit(0);
+//                 });
+//             });
+//         });
+//     })
+//     .catch((error) => {
+//         console.log('Failed to connect to database.');
+//         console.error(error);
+//     });

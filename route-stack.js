@@ -11,4 +11,5 @@ export const routeStack = (app) => {
     })
     app.use(viewRoutes);
     app.use(dataRoutes);
+    app.use(fileRoutes);
 }

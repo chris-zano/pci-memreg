@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global/root">
+    <link rel="stylesheet" href="/css/dynamic/index">
     <title>Document</title>
 </head>
+
 <body>
-    we live here
+    <form action="#">
+        <div class="header">
+            <h2>Member Registration Form</h2>
+        </div>
+
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <div class="input-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname" placeholder="enter your firstname..." required>
+            </div>
+
+            <div class="input-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" placeholder="enter your lastname..." required>
+            </div>
+
+            <div class="input-group">
+                <div class="input-sub-group">
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">Male</label>
+                </div>
+                <div class="input-sub-group">
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <div class="input-group">
+                <label for="occupation">Occupation</label>
+                <select name="occupation" id="occupation">
+                    <option value="none">-----Select Occupation-----</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="self-employed">Self Employed</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="123 456 7890">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" example@email.com>
+            </div>
+        </fieldset>
+
+    </form>
 </body>
+
 </html>

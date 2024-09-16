@@ -22,6 +22,7 @@ export const sendGlobalStyleSheet = async (req, res) => {
         }
 
         // res.set('Cache-Control', 'public, max-age=10');
+        console.log(_globalStylesheetPath)
         res.type('css');
         res.status(200);
         return fs.createReadStream(_globalStylesheetPath).pipe(res);

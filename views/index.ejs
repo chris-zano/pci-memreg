@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="#">
+    <form action="#" id="reg-form">
         <div class="header">
             <h2>Member Registration Form</h2>
         </div>
@@ -59,17 +59,16 @@
             </div>
         </fieldset>
 
-
         <fieldset>
             <legend>Contact Information</legend>
             <div class="input-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" placeholder="123 456 7890">
+                <input type="tel" name="phone" id="phone" placeholder="123 456 7890" required>
             </div>
 
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" example@email.com>
+                <input type="email" name="email" id="email" placeholder="example@email.com">
             </div>
         </fieldset>
 
@@ -79,6 +78,9 @@
         </div>
 
     </form>
+
+    <!-- do the image form here -->
+    <script src="/scripts/dynamic/inputs"></script>
 </body>
 
 </html>

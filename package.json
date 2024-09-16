@@ -1,0 +1,14 @@
+{
+  "name": "pci-memreg",
+  "version": "1.0.0",
+  "description": "Form for capturing user data",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch **/*.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

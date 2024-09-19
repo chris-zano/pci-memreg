@@ -10,74 +10,77 @@
 </head>
 
 <body>
-    <form action="#" id="reg-form">
+
+    <section id="u-reg-main">
         <div class="header">
-            <h2>Member Registration Form</h2>
+            <div class="church-name-logo">
+                <img src="/static/images/logo" alt="church logo">
+                <h2 class="c-name">
+                    PEREZ CHAPEL INTERNATIONAL <br>
+                    GLORY TEMPLE
+                </h2>
+            </div>
+            <div class="form-title">
+                <h2>Member Registration Form</h2>
+            </div>
         </div>
+        <form action="#" id="reg-form">
+            <fieldset>
+                <legend>Personal Details</legend>
 
-        <fieldset>
-            <legend>Personal Details</legend>
-
-            <div class="input-group">
-                <label for="firstname">First Name</label>
-                <input type="text" name="firstname" id="firstname" placeholder="enter your firstname..." required>
-            </div>
-
-            <div class="input-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" id="lastname" placeholder="enter your lastname..." required>
-            </div>
-
-            <div class="input-group">
-                <div class="input-sub-group">
-                    <div class="header 3">
-                        <h3> Gender</h3>
-                    </div>
-                    <input type="radio" name="gender" id="male">
-                    <label for="male">Male</label>
+                <div class="input-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="enter your firstname..." required>
                 </div>
-                <div class="input-sub-group">
-                    <input type="radio" name="gender" id="female">
-                    <label for="female">Female</label>
+
+                <div class="input-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="enter your lastname..." required>
                 </div>
+
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="occupation">Occupation</label>
+                    <select name="occupation" id="occupation">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="self-employed">Self Employed</option>
+                        <option value="unemployed">Unemployed</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="123 456 7890" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@email.com">
+                </div>
+            </fieldset>
+
+            <div class="button">
+                <input type="submit" value="NEXT">
             </div>
 
-            <div class="input-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" name="dob" id="dob" required>
-            </div>
-
-            <div class="input-group">
-                <label for="occupation">Occupation</label>
-                <select name="occupation" id="occupation">
-                    <option value="none">-----Select Occupation-----</option>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="self-employed">Self Employed</option>
-                    <option value="unemployed">Unemployed</option>
-                </select>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Contact Information</legend>
-            <div class="input-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" placeholder="123 456 7890" required>
-            </div>
-
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="example@email.com">
-            </div>
-        </fieldset>
-
-        <div class="button">
-            <button> SEND </button>
-
-        </div>
-
-    </form>
+        </form>
+    </section>
 
     <!-- do the image form here -->
     <script src="/scripts/dynamic/inputs"></script>

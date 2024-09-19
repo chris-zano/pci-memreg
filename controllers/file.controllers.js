@@ -22,7 +22,6 @@ export const sendGlobalStyleSheet = async (req, res) => {
         }
 
         // res.set('Cache-Control', 'public, max-age=10');
-        console.log(_globalStylesheetPath)
         res.type('css');
         res.status(200);
         return fs.createReadStream(_globalStylesheetPath).pipe(res);
@@ -129,15 +128,40 @@ export const getFonts = (req, res) => {
             console.log('Filename for font face not provided.', req.params);
             return res.status(400).json({ message: `Filename for font face not provided. ${req.params}` });
         }
-        const filePath = path.join(__dirname, '..', '..', 'public', 'assets', 'fonts', `${filename}.ttf`);
+        const filePath = path.join(__dirname,  '..', 'public', 'assets', 'fonts', `${filename}.ttf`);
 
-        if (!fs.existsSync(_globalStylesheetPath)) {
+        if (!fs.existsSync(filePath)) {
             console.log('No font face found for ', filename);
             return res.status(404).json({ message: `No font face found for ${filename}` });
         }
 
         res.set('Cache-Control', 'public, max-age=86400');
         res.type('font/ttf');;
+        res.status(200);
+        fs.createReadStream(filePath).pipe(res);
+    } catch (error) {
+        logError(error);
+        return res.status(500).json({ message: 'A internal error occured' });
+    }
+}
+
+export const getImage = (req, res) => {
+
+    try {
+        const { filename } = req.params;
+        if (!filename) {
+            console.log('Filename for image not provided.', req.params);
+            return res.status(400).json({ message: `Filename for image not provided. ${req.params}` });
+        }
+        const filePath = path.join(__dirname,  '..', 'public', 'assets', 'images', `${filename}.png`);
+
+        if (!fs.existsSync(filePath)) {
+            console.log('No image found for ', filename);
+            return res.status(404).json({ message: `No image found for ${filename}` });
+        }
+
+        res.set('Cache-Control', 'public, max-age=86400');
+        res.type('png');
         res.status(200);
         fs.createReadStream(filePath).pipe(res);
     } catch (error) {

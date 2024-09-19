@@ -1,110 +1,276 @@
-/* styling for general body*/
-body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
+@media screen and (min-width:768px) {
+
+    section#u-reg-main {
+        min-width: 350px;
+        max-width: 600px;
+        height: 93vh;
+        overflow-y: scroll;
+        margin: 2rem auto;
+        border: 1px solid grey;
+        border-radius: 1ch;
+    }
+
+    section#u-reg-main::-webkit-scrollbar {
+        display: none;
+    }
+
+    section#u-reg-main div.header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid grey;
+    }
+    
+    section#u-reg-main div.header  .church-name-logo{
+        padding: 1.5ch 1ch ;
+        display: flex;
+        align-items: center;
+        gap: 2ch;
+    }
+
+    section#u-reg-main div.header  .church-name-logo img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+
+    section#u-reg-main div.header  .church-name-logo h2.c-name {
+        font-family: var(--font-poet);
+        font-weight: 400;
+        text-align: center;
+    }
+
+    section#u-reg-main div.header .form-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1ch;
+    }
+
+    section#u-reg-main div.header .form-title h2 {
+        font-family: var(--font-poet);
+        font-weight: 400;
+        text-align: center;
+        margin-left: 3ch;
+    }
+
+    section#u-reg-main form {
+        min-width: 90%;
+        margin: 0 auto;
+        padding: 2ch;
+        background-color: #fff;
+    }
+    
+    /* feildset styling*/
+    section#u-reg-main form fieldset {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        margin: 2ch 0;
+    }
+    
+    section#u-reg-main form legend {
+        border: 1px solid transparent;
+        border-radius: 1ch;
+        font-size: 2ch;
+        font-weight: 700;
+        font-family: var(--font-noto);
+        color: black;
+        text-transform: uppercase;
+        padding-left: 15px;
+    }
+    
+    /* input group styling*/
+    
+    section#u-reg-main form .input-group {
+        display: flex;
+        flex-direction: column;
+        margin-block: 15px;
+        margin-left: 15px;
+        width: 95%;
+    }
+    
+    section#u-reg-main form .input-group label,
+    section#u-reg-main form .header3 h3 {
+        margin-bottom: 10px;
+        font-size: 1 em;
+        color: #555;
+        font-weight: 400;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 10px;
+        font-size: 1 em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .input-group input[ type="radio"]{
+        margin-right:  5px;
+    }
+    
+    
+    .input-sub-group {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    .input-group input:focus,
+    .input-group select:focus{
+        outline: none;
+        border-color: #007bff;
+    }
+    
+    
+    input::placeholder{
+        color: #888;
+    }
+    
+    input[ type= "submit"]{
+        height: 45px;
+        width: 120px;
+        background-color: transparent;
+        color: #111;
+        font-weight: 600;
+        border: 1px solid #007bff;
+        border-radius: 1ch;
+        cursor: pointer;
+        transition: all ease-in-out 250ms;
+    }
+
+    input[ type= "submit"]:hover,
+    input[ type= "submit"]:focus {
+        border-color: transparent;
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2ch 0;
+    }
+    
+    
+    button:hover,button:focus {
+        background-color: transparent;
+        color: black ;
+    
+    }
+    
 }
 
-form {
-    max-width: 1000px;
-    margin: 60px;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
-}
-
-
-/* header styling*/
-.header h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-/* feildset styling*/
-fieldset {
-    border: 1px #dddddd00;
-    margin-bottom: 20px;
-    border-radius: 8px;
-
-}
-
-legend {
-    font-size: 1.2em;
-    color: #333;
-    padding: 15px;
-}
-
-/* input group styling*/
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin: 16px;
-}
-
-.input-group label {
-    margin-bottom: 10px;
-    font-size: 1 em;
-    color: #555;
-}
-
-.input-group input,
-.input-group select {
-    padding: 10px;
-    font-size: 1 em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.input-group input[ type="radio"]{
-    margin-right:  5px;
-}
-
-
-.input-sub-group {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.input-group input:focus,
-.input-group select:focus{
-    outline: none;
-    border-color: #007bff;
-}
-
-
-input::placeholder{
-    color: #888;
-}
-
-input[ type= "submit"]{
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button {
-    padding: 10px 20px;
-    border: 1px solid grey;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold ;
-    background-color: grey;
-    color: white;
-    transition: all ease-in-out 250ms;
-}
-
-
-button:hover,button:focus {
-    background-color: transparent;
-    color: black ;
-
+@media screen and (max-width:768px) {
+    form {
+        min-width: 90vw;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    
+    }
+    
+    
+    /* header styling*/
+    .header h2 {
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 10px;
+        color: #0244a6;
+        border-bottom: 2px solid #e3e300a6;
+        font-family: var(--font-poet);
+        font-weight: 400;
+    }
+    
+    /* feildset styling*/
+    fieldset {
+        border: 1px solid #dddddd00;
+        border-radius: 8px;
+    
+    }
+    
+    legend {
+        font-size: 1.2em;
+        font-weight: 900;
+        font-family: var(--font-sedan);
+        color: #333;
+        padding: 15px;
+    }
+    
+    /* input group styling*/
+    
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        margin: 16px;
+    }
+    
+    .input-group label {
+        margin-bottom: 10px;
+        font-size: 1 em;
+        color: #555;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 10px;
+        font-size: 1 em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .input-group input[ type="radio"]{
+        margin-right:  5px;
+    }
+    
+    
+    .input-sub-group {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    .input-group input:focus,
+    .input-group select:focus{
+        outline: none;
+        border-color: #007bff;
+    }
+    
+    
+    input::placeholder{
+        color: #888;
+    }
+    
+    input[ type= "submit"]{
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button {
+        padding: 10px 20px;
+        border: 1px solid grey;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold ;
+        background-color: grey;
+        color: white;
+        transition: all ease-in-out 250ms;
+    }
+    
+    
+    button:hover,button:focus {
+        background-color: transparent;
+        color: black ;
+    
+    }
+    
 }

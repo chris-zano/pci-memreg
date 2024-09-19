@@ -1,5 +1,28 @@
+@font-face {
+    font-family: noto;
+    src: url('/static/fonts/noto');
+}
+
+@font-face {
+    font-family: poet;
+    src: url('/static/fonts/poet');
+}
+
+@font-face {
+    font-family: sedan;
+    src: url('/static/fonts/sedan');
+}
+
+:root{
+    /* fonts */
+    --font-noto: noto;
+    --font-poet: poet;
+    --font-sedan: sedan;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-noto);
 }
